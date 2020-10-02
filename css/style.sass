@@ -1,0 +1,334 @@
+$main-font: 'Roboto', sans-serif
+$title-font: 'Open Sans', sans-serif
+$btn-color: #e4572e
+$btn-hover: #e4572e
+$main-text-color: #ffffff
+$secondary-text-color: #f5cb5c
+$dark-grey: rgb(51,51,51)
+$light-grey: #424242
+$backgound-color: #424242
+$secondary-bg-color: #eeeeee
+*
+   box-sizing: border-box
+   margin: 0
+   padding: 0
+body 
+   background-color: $secondary-bg-color
+   // background: url("../sources/img/background.jpg")  0 0/cover fixed no-repeat
+header
+   min-height: 800px
+   width: 100%
+   height: 100vh
+   background: url("../sources/img/header.jpg")  50% 0/cover no-repeat
+   position: relative
+   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, .6)
+   
+   .toning-layer
+      width: 100%
+      height: 100%
+      background-color: #000
+      opacity: .7
+      position: absolute
+      z-index: 0
+   .wrapper
+      width: 100%
+      height: 100%
+      z-index: 2
+      display: flex
+      justify-content: center
+      align-items: center
+      border-bottom: 3px $secondary-text-color solid
+      position: relative
+      .logo-container
+         display: flex
+         align-items: center
+         flex-direction: column
+         .logo-wrap
+            display: flex
+            align-items: center
+            flex-direction: column
+            position: relative
+            img
+               width: 100%
+               position: absolute
+            p  
+               word-spacing: 120px
+               margin-top: 100px
+               font-size: 24px
+               font-family: $title-font
+               font-weight: bold
+               color: $secondary-text-color
+               text-transform: uppercase
+         article
+            letter-spacing: 1px
+            word-spacing: 5px
+            margin: 50px 0
+            height: 60px
+            width: 600px
+            border-top: 1px $main-text-color solid
+            display: flex
+            justify-content: center
+            align-items: center
+            font-family: $main-font
+            color: #fff
+            font-size: 18px
+            font-style: italic
+            text-align: center
+         .make-order
+            background-image: linear-gradient(to top, $secondary-text-color 50%, transparent 50%)
+            background-size: 200% 200%
+            height: 60px
+            width: 180px
+            border: 2px $secondary-text-color solid
+            border-radius: 20px 
+            display: flex
+            justify-content: center
+            align-items: center
+            font-family: $main-font
+            color: #fff
+            font-size: 32px
+            transition-duration: .4s
+            &:hover
+               cursor: pointer
+               background-image: linear-gradient(to top, $secondary-text-color 50%, transparent 50%)
+               background-position: 0 100%
+               transition-duration: .4s
+.navbar
+   position: fixed
+   width: 100%
+   color: $main-text-color
+   z-index: 1000
+   display: flex
+   justify-content: center
+   transition-duration: .3s
+   &.active
+      background-color: $light-grey
+      box-shadow: 0 3px 10px 1px rgba(0, 0, 0, .6)
+      &.underline
+         transition-duration: 0s
+         border-bottom: 3px $secondary-text-color solid
+   .nav-wrap
+      width: 100%
+      max-width: 1370px
+      ul
+         list-style-type: none
+         display: flex
+         justify-content: space-around
+         li
+            flex-basis: 20%
+         a
+            font-family: $main-font
+            font-size: 20px
+            color: #fff
+            text-decoration: none
+            div
+               display: flex
+               align-items: center
+               justify-content: center
+               height: 70px
+               width: 100%
+               transition-duration: .3s
+               &:hover
+                  color: $secondary-text-color
+                  background-color: rgba($dark-grey, .6) 
+                  transition-duration: .3s
+section
+   width: 100%
+   .team-list
+      width: 100%
+      display: flex
+      align-items: center
+      flex-direction: column
+      justify-content: space-around
+      .container
+         width: 100%
+         max-width: 1190px
+         padding: 0 50px
+      p  
+         margin: 15px 0 10px 0
+         font-size: 40px
+         font-family: $title-font
+         color: $light-grey
+         text-transform: uppercase
+         width: 100%
+         border-bottom: 3px $secondary-text-color solid
+      .wrapper
+         width: 100%
+         display: flex
+         flex-wrap: wrap
+         justify-content: center
+         padding-bottom: 70px
+         .team-item
+            flex-grow: 0
+            height: 400px
+            max-width: 340px
+            width: 100% 
+            margin: 10px
+            border-radius: 5px
+            transition-duration: .3s
+            overflow: hidden
+            position: relative
+            img
+               height: 100%
+            .hover-panel
+               width: 100%
+               height: 120px
+               background-color: rgba($dark-grey, .8)
+               transition-duration: .3s
+               border-top: 3px $secondary-text-color solid
+               .team-info 
+                  padding: 15px 30px
+                  display: flex
+                  align-items: flex-end
+                  justify-content: center
+                  flex-direction: column
+                  border-bottom: none
+                  font-family: $main-font
+                  color: $main-text-color
+                  text-transform: capitalize
+
+                  .name
+                     font-size: 40px
+                     border-bottom: 1px $secondary-text-color solid
+                  .job
+                     font-size: 16px
+            &:hover
+               cursor: pointer
+               transform: translateY(-5px)
+               transition-duration: .3s
+               .hover-panel
+                  transform: translateY(-120px)
+                  transition-duration: .3s
+               
+   .pricelist-block
+      width: 100%
+      display: flex
+      justify-content: space-between
+      background-color: $backgound-color
+      align-items: center
+      flex-direction: column
+      padding: 100px 50px
+      .wrapper
+         width: 100%
+         max-width: 1090px
+         p
+            font-size: 40px
+            font-family: $title-font
+            margin-bottom: 5px 
+            color: $main-text-color
+            text-transform: uppercase
+            border-bottom: 3px $secondary-text-color solid
+            width: 100%
+         .table
+            border: none
+            width: 100%
+            td
+               width: 100%
+               padding: 0 30px 0 30px
+               color: $main-text-color
+               height: 60px
+               background-color: $light-grey
+               letter-spacing: 2px
+               font-family: $main-font
+            .price
+               text-align: right
+               width: 100%
+               min-width: 150px
+               color: $secondary-text-color
+            .dark
+               background-color: $dark-grey
+   .photo-slider
+      padding: 50px
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      background-color: $backgound-color
+      
+      .wrapper
+         max-width: 1370px
+         max-height: 800px
+         overflow: hidden
+         position: relative
+         .slide-bars
+            position: absolute
+            bottom: 20px
+            display: flex
+            left: 50%
+            transform: translateX(-50%)
+            .bar
+               height: 5px
+               width: 50px
+               background-color: $main-text-color 
+               border-radius: 5px
+               margin: 10px 
+               cursor: pointer
+               transition-duration: .2s
+               &:hover
+                  background-color: $secondary-text-color
+                  transition-duration: .2s
+         .slides
+            overflow: hidden
+            display: flex
+            position: relative
+            align-items: center
+            width: 500%
+            height: 100%
+            input[name = "radio"]
+               position: absolute
+               visibility: hidden
+            .slide
+               width: 20%
+               transition: 1s ease-in-out
+               img
+                  width: 100%
+
+   .about-us
+      padding: 100px
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      .wrapper
+         max-width: 1370px
+         height: 300px
+         width: 100%
+         padding: 20px 
+         display: flex
+         flex-wrap: wrap
+         justify-content: center
+   .contacts
+      background-color: $backgound-color
+      padding: 100px
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      .wrapper
+         max-width: 1370px
+         height: 700px
+         width: 100%
+         padding: 20px 
+         display: flex
+         flex-wrap: wrap
+         justify-content: center
+footer
+   width: 100%
+   height: 100px
+   background-color: $dark-grey
+.anchor 
+   display: block
+   position: relative
+   top: -70px
+   visibility: hidden
+   //for slider
+#r1:checked ~ .s1
+   margin-left: 0%
+#r2:checked ~ .s1
+   margin-left: -20%
+#r3:checked ~ .s1
+   margin-left: -40%
+#r4:checked ~ .s1
+   margin-left: -60%
+#r5:checked ~ .s1
+   margin-left: -80%
