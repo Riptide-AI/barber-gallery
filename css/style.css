@@ -422,7 +422,7 @@ section .photo-slider {
 section .photo-slider .wrapper {
   max-width: 1440px;
   max-height: 810px;
-  overflow-x: scroll;
+  overflow: hidden;
   position: relative;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
