@@ -422,8 +422,11 @@ section .photo-slider {
 section .photo-slider .wrapper {
   max-width: 1440px;
   max-height: 810px;
-  overflow: hidden;
   position: relative;
+}
+
+section .photo-slider .wrapper .slider-block {
+  overflow: hidden;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
@@ -435,22 +438,23 @@ section .photo-slider .wrapper {
   -ms-overflow-style: none;
 }
 
-section .photo-slider .wrapper::-webkit-scrollbar {
+section .photo-slider .wrapper .slider-block::-webkit-scrollbar {
   display: none;
 }
 
-section .photo-slider .wrapper .slide-bars {
+section .photo-slider .wrapper .slider-block .slide-bars {
   position: absolute;
   bottom: 20px;
+  width: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateX(-25%);
+          transform: translateX(-25%);
 }
 
-section .photo-slider .wrapper .slide-bars .bar {
+section .photo-slider .wrapper .slider-block .slide-bars .bar {
   height: 5px;
   width: 50px;
   background-color: #ffffff;
@@ -461,13 +465,13 @@ section .photo-slider .wrapper .slide-bars .bar {
           transition-duration: .2s;
 }
 
-section .photo-slider .wrapper .slide-bars .bar:hover {
+section .photo-slider .wrapper .slider-block .slide-bars .bar:hover {
   background-color: #f5cb5c;
   -webkit-transition-duration: .2s;
           transition-duration: .2s;
 }
 
-section .photo-slider .wrapper .slides {
+section .photo-slider .wrapper .slider-block .slides {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -475,19 +479,19 @@ section .photo-slider .wrapper .slides {
   width: 500%;
 }
 
-section .photo-slider .wrapper .slides input[name="radio"] {
+section .photo-slider .wrapper .slider-block .slides input[name="radio"] {
   position: absolute;
   visibility: hidden;
 }
 
-section .photo-slider .wrapper .slides .slide {
+section .photo-slider .wrapper .slider-block .slides .slide {
   scroll-snap-align: start;
   width: 20%;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 }
 
-section .photo-slider .wrapper .slides .slide img {
+section .photo-slider .wrapper .slider-block .slides .slide img {
   height: 100%;
   width: 100%;
 }
@@ -562,10 +566,6 @@ footer {
   position: relative;
   top: -70px;
   visibility: hidden;
-}
-
-.s1 {
-  margin-left: 0%;
 }
 
 #r1:checked ~ .s1 {

@@ -247,55 +247,56 @@ section
       justify-content: center
       align-items: center
       background-color: $backgound-color
-      
       .wrapper
          max-width: 1440px
          max-height: 810px
-         overflow: hidden // turn on auto for mobile
          position: relative
-         border-radius: 5px
-         box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
-         background-color: $secondary-text-color
-         border-bottom: 3px $secondary-text-color solid
-         // to hide scrollbar
-         scroll-snap-type: x mandatory
-         scrollbar-width: none
-         -ms-overflow-style: none
-         &::-webkit-scrollbar
-            display: none
-         .slide-bars
-            position: absolute
-            bottom: 20px
-            display: flex
-            left: 50%
-            transform: translateX(-50%)
-            .bar
-               height: 5px
-               width: 50px
-               background-color: $main-text-color 
-               border-radius: 5px
-               margin: 10px 
-               cursor: pointer
-               transition-duration: .2s
-               &:hover
-                  background-color: $secondary-text-color
-                  transition-duration: .2s
-               
-         .slides
-            display: flex
-            position: relative
-
-            width: 500%
-            input[name = "radio"]
+         .slider-block
+            overflow: hidden // turn on auto for mobile
+            border-radius: 5px
+            box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
+            background-color: $secondary-text-color
+            border-bottom: 3px $secondary-text-color solid
+            // to hide scrollbar
+            scroll-snap-type: x mandatory
+            scrollbar-width: none
+            -ms-overflow-style: none
+            &::-webkit-scrollbar
+               display: none
+            .slide-bars
                position: absolute
-               visibility: hidden
-            .slide
-               scroll-snap-align: start
-               width: 20%
-               transition: 1s ease-in-out
-               img
-                  height: 100%
-                  width: 100%
+               bottom: 20px
+               width: 600px
+               display: flex
+               left: 50%
+               transform: translateX(-25%)
+               .bar
+                  height: 5px
+                  width: 50px
+                  background-color: $main-text-color 
+                  border-radius: 5px
+                  margin: 10px 
+                  cursor: pointer
+                  transition-duration: .2s
+                  &:hover
+                     background-color: $secondary-text-color
+                     transition-duration: .2s
+                  
+            .slides
+               display: flex
+               position: relative
+
+               width: 500%
+               input[name = "radio"]
+                  position: absolute
+                  visibility: hidden
+               .slide
+                  scroll-snap-align: start
+                  width: 20%
+                  transition: 1s ease-in-out
+                  img
+                     height: 100%
+                     width: 100%
 
    .about-us
       padding: 100px
@@ -335,8 +336,7 @@ footer
    position: relative
    top: -70px
    visibility: hidden
-.s1 
-   margin-left: 0%
+
    //for slider
 #r1:checked ~ .s1
    margin-left: 0%
