@@ -253,6 +253,7 @@ section .team-list p {
   text-transform: uppercase;
   width: 100%;
   border-bottom: 3px #f5cb5c solid;
+  text-shadow: 0 0 10px 1px black;
 }
 
 section .team-list .wrapper {
@@ -272,7 +273,7 @@ section .team-list .wrapper .team-item {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  height: 400px;
+  height: 380px;
   max-width: 340px;
   width: 100%;
   margin: 10px;
@@ -332,6 +333,8 @@ section .team-list .wrapper .team-item:hover {
           transform: translateY(-5px);
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
+  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.6);
 }
 
 section .team-list .wrapper .team-item:hover .hover-panel {
@@ -417,10 +420,23 @@ section .photo-slider {
 }
 
 section .photo-slider .wrapper {
-  max-width: 1370px;
-  max-height: 800px;
-  overflow: hidden;
+  max-width: 1440px;
+  max-height: 810px;
+  overflow-x: scroll;
   position: relative;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
+  background-color: #f5cb5c;
+  border-bottom: 3px #f5cb5c solid;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+section .photo-slider .wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 section .photo-slider .wrapper .slide-bars {
@@ -452,16 +468,11 @@ section .photo-slider .wrapper .slide-bars .bar:hover {
 }
 
 section .photo-slider .wrapper .slides {
-  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 500%;
-  height: 100%;
 }
 
 section .photo-slider .wrapper .slides input[name="radio"] {
@@ -470,12 +481,14 @@ section .photo-slider .wrapper .slides input[name="radio"] {
 }
 
 section .photo-slider .wrapper .slides .slide {
+  scroll-snap-align: start;
   width: 20%;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
 }
 
 section .photo-slider .wrapper .slides .slide img {
+  height: 100%;
   width: 100%;
 }
 

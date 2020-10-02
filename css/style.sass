@@ -152,6 +152,7 @@ section
          text-transform: uppercase
          width: 100%
          border-bottom: 3px $secondary-text-color solid
+         text-shadow: 0 0 10px 1px black
       .wrapper
          width: 100%
          display: flex
@@ -160,7 +161,7 @@ section
          padding-bottom: 70px
          .team-item
             flex-grow: 0
-            height: 400px
+            height: 380px
             max-width: 340px
             width: 100% 
             margin: 10px
@@ -196,9 +197,11 @@ section
                cursor: pointer
                transform: translateY(-5px)
                transition-duration: .3s
+               box-shadow: 0 0 8px 1px rgba(0, 0, 0, .6)
                .hover-panel
                   transform: translateY(-120px)
                   transition-duration: .3s
+                  
                
    .pricelist-block
       width: 100%
@@ -246,10 +249,20 @@ section
       background-color: $backgound-color
       
       .wrapper
-         max-width: 1370px
-         max-height: 800px
-         overflow: hidden
+         max-width: 1440px
+         max-height: 810px
+         overflow-x: scroll
          position: relative
+         border-radius: 5px
+         box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
+         background-color: $secondary-text-color
+         border-bottom: 3px $secondary-text-color solid
+         // to hide scrollbar
+         scroll-snap-type: x mandatory
+         scrollbar-width: none
+         -ms-overflow-style: none
+         &::-webkit-scrollbar
+            display: none
          .slide-bars
             position: absolute
             bottom: 20px
@@ -267,20 +280,21 @@ section
                &:hover
                   background-color: $secondary-text-color
                   transition-duration: .2s
+               
          .slides
-            overflow: hidden
             display: flex
             position: relative
-            align-items: center
+
             width: 500%
-            height: 100%
             input[name = "radio"]
                position: absolute
                visibility: hidden
             .slide
+               scroll-snap-align: start
                width: 20%
                transition: 1s ease-in-out
                img
+                  height: 100%
                   width: 100%
 
    .about-us
