@@ -252,13 +252,13 @@ section
          max-height: 810px
          position: relative
          .slider-block
-            overflow: hidden // turn on auto for mobile
+            overflow-x: auto // turn on auto for mobile
             border-radius: 5px
             box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
             background-color: $secondary-text-color
             border-bottom: 3px $secondary-text-color solid
+            // scroll-snap-type: x mandatory //scroll to next div
             // to hide scrollbar
-            scroll-snap-type: x mandatory
             scrollbar-width: none
             -ms-overflow-style: none
             &::-webkit-scrollbar
@@ -285,8 +285,9 @@ section
             .slides
                display: flex
                position: relative
-
                width: 500%
+               .s1
+                  margin-left: 0
                input[name = "radio"]
                   position: absolute
                   visibility: hidden
@@ -339,7 +340,7 @@ footer
 
    //for slider
 #r1:checked ~ .s1
-   margin-left: 0%
+   margin-left: 0
 #r2:checked ~ .s1
    margin-left: -20%
 #r3:checked ~ .s1

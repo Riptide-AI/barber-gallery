@@ -426,14 +426,12 @@ section .photo-slider .wrapper {
 }
 
 section .photo-slider .wrapper .slider-block {
-  overflow: hidden;
+  overflow-x: auto;
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
   background-color: #f5cb5c;
   border-bottom: 3px #f5cb5c solid;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -477,6 +475,10 @@ section .photo-slider .wrapper .slider-block .slides {
   display: flex;
   position: relative;
   width: 500%;
+}
+
+section .photo-slider .wrapper .slider-block .slides .s1 {
+  margin-left: 0;
 }
 
 section .photo-slider .wrapper .slider-block .slides input[name="radio"] {
@@ -569,7 +571,7 @@ footer {
 }
 
 #r1:checked ~ .s1 {
-  margin-left: 0%;
+  margin-left: 0;
 }
 
 #r2:checked ~ .s1 {
