@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #eeeeee;
 }
@@ -159,9 +163,9 @@ header .wrapper .logo-container .make-order:hover {
 }
 
 .navbar.active {
-  background-color: #424242;
-  -webkit-box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.6);
+  background-color: #333333;
+  -webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.6);
 }
 
 .navbar.active.underline {
@@ -189,14 +193,11 @@ header .wrapper .logo-container .make-order:hover {
       flex-basis: 20%;
 }
 
-.navbar .nav-wrap ul a {
+.navbar .nav-wrap ul li div {
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   color: #fff;
   text-decoration: none;
-}
-
-.navbar .nav-wrap ul a div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,15 +207,15 @@ header .wrapper .logo-container .make-order:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 70px;
+  height: 8vh;
   width: 100%;
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
 }
 
-.navbar .nav-wrap ul a div:hover {
+.navbar .nav-wrap ul li div:hover {
   color: #f5cb5c;
-  background-color: rgba(51, 51, 51, 0.6);
+  background-color: rgba(66, 66, 66, 0.6);
   -webkit-transition-duration: .3s;
           transition-duration: .3s;
 }
@@ -266,7 +267,7 @@ section .team-list .wrapper {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 }
 
 section .team-list .wrapper .team-item {
@@ -405,7 +406,7 @@ section .pricelist-block .wrapper .table .dark {
 }
 
 section .photo-slider {
-  padding: 50px;
+  height: 92vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -431,7 +432,11 @@ section .photo-slider .wrapper .slider-block {
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
   background-color: #f5cb5c;
-  border-bottom: 3px #f5cb5c solid;
+  border-bottom: 2px #f5cb5c solid;
+  border-top: 2px #f5cb5c solid;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -469,21 +474,16 @@ section .photo-slider .wrapper .slider-block .slide-bars .bar:hover {
           transition-duration: .2s;
 }
 
+section .photo-slider .wrapper .slider-block .slide-bars .bar.active {
+  background-color: #f5cb5c;
+}
+
 section .photo-slider .wrapper .slider-block .slides {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
   width: 500%;
-}
-
-section .photo-slider .wrapper .slider-block .slides .s1 {
-  margin-left: 0;
-}
-
-section .photo-slider .wrapper .slider-block .slides input[name="radio"] {
-  position: absolute;
-  visibility: hidden;
 }
 
 section .photo-slider .wrapper .slider-block .slides .slide {
@@ -566,7 +566,7 @@ footer {
 .anchor {
   display: block;
   position: relative;
-  top: -70px;
+  top: -8vh;
   visibility: hidden;
 }
 

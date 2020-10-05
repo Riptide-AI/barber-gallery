@@ -12,6 +12,8 @@ $secondary-bg-color: #eeeeee
    box-sizing: border-box
    margin: 0
    padding: 0
+html
+   scroll-behavior: smooth
 body 
    background-color: $secondary-bg-color
    // background: url("../sources/img/background.jpg")  0 0/cover fixed no-repeat
@@ -102,8 +104,8 @@ header
    justify-content: center
    transition-duration: .3s
    &.active
-      background-color: $light-grey
-      box-shadow: 0 3px 10px 1px rgba(0, 0, 0, .6)
+      background-color: $dark-grey
+      box-shadow: 0 0 15px 1px rgba(0, 0, 0, .6)
       &.underline
          transition-duration: 0s
          border-bottom: 3px $secondary-text-color solid
@@ -116,21 +118,20 @@ header
          justify-content: space-around
          li
             flex-basis: 20%
-         a
-            font-family: $main-font
-            font-size: 20px
-            color: #fff
-            text-decoration: none
             div
+               font-family: $main-font
+               font-size: 20px
+               color: #fff
+               text-decoration: none
                display: flex
                align-items: center
                justify-content: center
-               height: 70px
+               height: 8vh
                width: 100%
                transition-duration: .3s
                &:hover
                   color: $secondary-text-color
-                  background-color: rgba($dark-grey, .6) 
+                  background-color: rgba($light-grey, .6) 
                   transition-duration: .3s
 section
    width: 100%
@@ -158,7 +159,7 @@ section
          display: flex
          flex-wrap: wrap
          justify-content: center
-         padding-bottom: 70px
+         padding-bottom: 30px
          .team-item
             flex-grow: 0
             height: 380px
@@ -241,23 +242,25 @@ section
             .dark
                background-color: $dark-grey
    .photo-slider
-      padding: 50px
+      height: 92vh
       width: 100%
       display: flex
       justify-content: center
       align-items: center
       background-color: $backgound-color
       .wrapper
-         max-width: 1440px
+         max-width: 1440px //16:9 
          max-height: 810px
          position: relative
          .slider-block
-            overflow-x: auto // turn on auto for mobile
+            overflow-x: hidden // turn on auto for mobile
             border-radius: 5px
             box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
             background-color: $secondary-text-color
-            border-bottom: 3px $secondary-text-color solid
-            // scroll-snap-type: x mandatory //scroll to next div
+            border-bottom: 2px $secondary-text-color solid
+            border-top: 2px $secondary-text-color solid
+            scroll-snap-type: x mandatory //scroll to next div
+            scroll-behavior: smooth //smooth scrolling
             // to hide scrollbar
             scrollbar-width: none
             -ms-overflow-style: none
@@ -281,16 +284,13 @@ section
                   &:hover
                      background-color: $secondary-text-color
                      transition-duration: .2s
+                  &.active
+                     background-color: $secondary-text-color
                   
             .slides
                display: flex
                position: relative
                width: 500%
-               .s1
-                  margin-left: 0
-               input[name = "radio"]
-                  position: absolute
-                  visibility: hidden
                .slide
                   scroll-snap-align: start
                   width: 20%
@@ -335,7 +335,7 @@ footer
 .anchor 
    display: block
    position: relative
-   top: -70px
+   top: -8vh
    visibility: hidden
 
    //for slider
