@@ -13,16 +13,16 @@
    <nav class="navbar">
       <div class="nav-wrap">
          <ul>
-            <li><div onclick="smoothScroll('about')" >Про нас</div></li>
+            <li><div onclick="smoothScroll('price-list')" >Ціни</div></li>
             <li><div onclick="smoothScroll('team')" >Команда</div></li>
             <li><div onclick="smoothScroll('slider')" >Галерея</div></li>
-            <li><div onclick="smoothScroll('price-list')" >Ціни</div></li>
+            <li><div onclick="smoothScroll('about')" >Про нас</div></li>
             <li><div onclick="smoothScroll('contacts')" >Контакти</div></li>
          </ul>
       </div>
    </nav>
-   <header>
-      <div class="toning-layer"></div>
+   <header id="header">
+      <div class="header-filter"></div>
       <div class="wrapper">
          <div class="logo-container">
             <div class="logo-wrap">
@@ -70,7 +70,8 @@
          </div>
       </div>
       <a class="anchor" id="team"></a><!--anchor for team-->
-      <div class="team-list">
+      <div class="team-list bg-filter">
+         <div class="bg-filter"></div>
          <div class="container">
             <p>команда</p>
             <div class="wrapper">
@@ -168,7 +169,7 @@
          </div> 
       </div>
       <a class="anchor" id="about"></a><!--anchor for slider-->
-      <div class="about-us">
+      <div class="about-us bg-filter">
          <div class="wrapper"><!---about-us text has to be here--></div>
       </div>
       <a class="anchor" id="contacts"></a><!--anchor for slider-->

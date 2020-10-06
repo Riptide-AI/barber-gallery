@@ -1,6 +1,8 @@
 'use strict';
 window.onscroll = function (){
+   const nextDiv = document.querySelector(".pricelist-block")
    const nav = document.querySelector(".navbar");
+   
    let top = window.scrollY;
    if(top >=100){
       nav.classList.add("active");
@@ -8,7 +10,7 @@ window.onscroll = function (){
    else{
       nav.classList.remove("active");
    }
-   if(top>= 895){
+   if(top>= nextDiv.offsetTop - nav.offsetHeight){
       nav.classList.add("underline");
    }
    else{

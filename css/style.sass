@@ -4,7 +4,7 @@ $btn-color: #e4572e
 $btn-hover: #e4572e
 $main-text-color: #ffffff
 $secondary-text-color: #f5cb5c
-$dark-grey: rgb(51,51,51)
+$dark-grey: #333333
 $light-grey: #424242
 $backgound-color: #424242
 $secondary-bg-color: #eeeeee
@@ -15,17 +15,17 @@ $secondary-bg-color: #eeeeee
 html
    scroll-behavior: smooth
 body 
-   background-color: $secondary-bg-color
-   // background: url("../sources/img/background.jpg")  0 0/cover fixed no-repeat
+   // background-color: $secondary-bg-color
+   background: url("../sources/img/background1.jpg") 50% 90% fixed no-repeat
 header
    min-height: 800px
    width: 100%
    height: 100vh
-   background: url("../sources/img/header.jpg")  50% 0/cover no-repeat
+   // background: url("../sources/img/header.jpg")  50% 0 /cover no-repeat 
    position: relative
-   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, .6)
+   box-shadow: 0 3px 10px 1px rgba(0, 0, 0, .7)
    
-   .toning-layer
+   .header-filter
       width: 100%
       height: 100%
       background-color: #000
@@ -136,30 +136,34 @@ header
 section
    width: 100%
    .team-list
+      height: 100%
       width: 100%
       display: flex
       align-items: center
       flex-direction: column
-      justify-content: space-around
+      justify-content: space-around 
+      &.bg-filter
+         background-color: rgba($dark-grey,.5)
       .container
          width: 100%
          max-width: 1190px
-         padding: 0 50px
+         padding: 10px 50px 30px 50px
       p  
-         margin: 15px 0 10px 0
+         margin: 0 0 10px 0
          font-size: 40px
          font-family: $title-font
-         color: $light-grey
+         color: $main-text-color
          text-transform: uppercase
          width: 100%
          border-bottom: 3px $secondary-text-color solid
          text-shadow: 0 0 10px 1px black
       .wrapper
+         border-radius: 10px
          width: 100%
          display: flex
          flex-wrap: wrap
          justify-content: center
-         padding-bottom: 30px
+         
          .team-item
             flex-grow: 0
             height: 380px
@@ -170,6 +174,7 @@ section
             transition-duration: .3s
             overflow: hidden
             position: relative
+            box-shadow: 0 5px 10px 2px rgba(0, 0, 0, .6)
             img
                height: 100%
             .hover-panel
@@ -198,7 +203,7 @@ section
                cursor: pointer
                transform: translateY(-5px)
                transition-duration: .3s
-               box-shadow: 0 0 8px 1px rgba(0, 0, 0, .6)
+               // box-shadow: 0 0 8px 1px rgba(0, 0, 0, .6)
                .hover-panel
                   transform: translateY(-120px)
                   transition-duration: .3s
@@ -242,21 +247,21 @@ section
             .dark
                background-color: $dark-grey
    .photo-slider
-      height: 92vh
-      width: 100%
+      padding: 75px 75px
+      max-width: 100%
       display: flex
       justify-content: center
       align-items: center
-      background-color: $backgound-color
-      .wrapper
-         max-width: 1440px //16:9 
-         max-height: 810px
+      background: linear-gradient(180deg, rgba(66,66,66,.9) 0%, rgba(51,51,51,1) 90%)
+      .wrapper 
+         max-width: 1440px
+         // max-height: 810px
          position: relative
          .slider-block
             overflow-x: hidden // turn on auto for mobile
             border-radius: 5px
             box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
-            background-color: $secondary-text-color
+            // background-color: rgba($dark-grey, .9)
             border-bottom: 2px $secondary-text-color solid
             border-top: 2px $secondary-text-color solid
             scroll-snap-type: x mandatory //scroll to next div
@@ -305,6 +310,8 @@ section
       display: flex
       justify-content: center
       align-items: center
+      &.bg-filter
+         background-color: rgba($dark-grey,.5)
       .wrapper
          max-width: 1370px
          height: 300px
