@@ -22,37 +22,14 @@ function smoothScroll(Element) {
    Element = document.getElementById(Element);
    let selectedPosX = 0;
    let selectedPosY = 0;
-   while (Element != null) {
-       selectedPosX += Element.offsetLeft;
-       selectedPosY += Element.offsetTop;
-       Element = Element.offsetParent;
-   }
+      selectedPosX += Element.offsetLeft;
+      selectedPosY += Element.offsetTop;
    window.scrollTo(selectedPosX, selectedPosY);
 }
+function displayElement(Element, status) {
 
-function sliderScroll(element, parentId) {
-   element = document.getElementById(element);
-   parentId = document.getElementById(parentId);
-   const elementList = document.querySelectorAll('.bar')
-   const slider = document.querySelector(".slider-block");
-   let posX = element.offsetLeft;
-   let posY = element.offsetTop;
-   slider.scroll(posX, posY);
-   eachElementRemoveClass("remove", "active", elementList);
-   parentId.classList.add("active");
+   Element = document.getElementById(Element);
+   Element.style.display = status;
 }
-function eachElementRemoveClass(operation,status, elementList){
-   switch(operation) {
-      case ("add"):
-         for(let i = 0; i < elementList.length; i++){
-            elementList[i].classList.add(status);
-         }
-         break;
-      case ("remove"):
-         for(let i = 0; i < elementList.length; i++){
-            elementList[i].classList.remove(status);
-         }
-         break;
-   }
-   
-}
+
+

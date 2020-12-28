@@ -1,0 +1,71 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  background: url("../sources/img/background.jpg") 50% 90% fixed no-repeat;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 1280px;
+  background-color: rgba(66, 66, 66, 0.8);
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.wrapper .sign-in {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .sign-in span {
+  cursor: pointer;
+}
+
+.wrapper .sign-in span:hover {
+  color: #f5cb5c;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.wrapper .sign-in ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .sign-in ul li {
+  margin: 0 10px;
+}
+
+.wrapper .sign-in ul li a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.wrapper .sign-in ul li a:hover {
+  color: #f5cb5c;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.wrapper .user-info p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  margin: 10px;
+}
+/*# sourceMappingURL=user-style.css.map */

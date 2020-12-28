@@ -14,9 +14,10 @@ $secondary-bg-color: #eeeeee
    padding: 0
 html
    scroll-behavior: smooth
+   overflow-x: hidden
 body 
    // background-color: $secondary-bg-color
-   background: url("../sources/img/background1.jpg") 50% 90% fixed no-repeat
+   background: url("../sources/img/background.jpg") 50% 90% fixed no-repeat
 header
    min-height: 800px
    width: 100%
@@ -101,7 +102,7 @@ header
    color: $main-text-color
    z-index: 1000
    display: flex
-   justify-content: center
+   justify-content: center 
    transition-duration: .3s
    &.active
       background-color: $dark-grey
@@ -110,29 +111,121 @@ header
          transition-duration: 0s
          border-bottom: 3px $secondary-text-color solid
    .nav-wrap
+      justify-content: center
+      display: flex
+      align-items: center
       width: 100%
-      max-width: 1370px
-      ul
-         list-style-type: none
+      max-width: 1200px
+      
+      .nav-logo
+         width: 230px
+         position: relative
+         height: 7vh
+         img
+            height: 75px
+            position: absolute
+            top: 10px
+            z-index: 1000
+      .nav-links
+         width: 100%
+         max-width: 800px
+         ul
+            list-style-type: none
+            display: flex
+            width: 100%
+            justify-content: space-around
+
+            li
+               width: 20%
+               
+               div
+                  font-family: $main-font
+                  font-size: 20px
+                  color: #fff
+                  text-decoration: none
+                  display: flex
+                  align-items: center
+                  justify-content: center
+                  height: 7vh
+                  min-height: 60px
+                  width: 100%
+                  transition-duration: .3s
+                  cursor: pointer
+                  &:hover
+                     color: $secondary-text-color
+                     background-color: rgba($light-grey, .6) 
+                     transition-duration: .3s
+
+      .authorization
+         position: relative
+         margin-left: auto
+         height: 7vh
          display: flex
-         justify-content: space-around
-         li
-            flex-basis: 20%
-            div
-               font-family: $main-font
-               font-size: 20px
-               color: #fff
-               text-decoration: none
-               display: flex
-               align-items: center
-               justify-content: center
-               height: 8vh
-               width: 100%
+         align-items: center
+         justify-content: center
+         .sign-in
+            transition-duration: .3s
+            cursor: pointer
+            height: 100%
+            display: flex
+            align-items: center
+            p
                transition-duration: .3s
+               font-family: $main-font
+               font-size: 16px
+               color: #fff
+
                &:hover
                   color: $secondary-text-color
-                  background-color: rgba($light-grey, .6) 
                   transition-duration: .3s
+
+            ul
+               list-style-type: none
+               display: flex
+               li 
+                  margin: 0 10px
+                  a 
+                     text-decoration: none
+                     font-family: $main-font
+                     font-size: 16px
+                     color: #fff
+                     &:hover
+                        color: $secondary-text-color
+                        transition-duration: .3s
+               
+         .lang
+            display: flex
+            position: relative
+            display: flex
+            margin: 20px
+            &:hover
+               .dropdown-content 
+                  display: block
+                  .lang-item
+                     img
+                        width: 30px
+                        height: 20px
+            .dropbtn
+               height: 20px
+               width: 30px
+               border: none
+               img
+                  width: 30px
+                  height: 20px
+               &:focus
+                     outline: 0
+            .dropdown-content
+               display: none
+               position: absolute
+               z-index: 1
+               a
+                  margin-bottom: 5px 
+                  height: 20px
+                  width: 30px
+                  text-decoration: none
+                  display: block
+
+            
 section
    width: 100%
    .team-list
@@ -159,7 +252,7 @@ section
          text-shadow: 0 0 10px 1px black
       .wrapper
          border-radius: 10px
-         width: 100%
+         max-width: 1190px
          display: flex
          flex-wrap: wrap
          justify-content: center
@@ -168,9 +261,7 @@ section
             flex-grow: 0
             height: 380px
             max-width: 340px
-            width: 100% 
             margin: 10px
-            border-radius: 5px
             transition-duration: .3s
             overflow: hidden
             position: relative
@@ -247,62 +338,26 @@ section
             .dark
                background-color: $dark-grey
    .photo-slider
-      padding: 75px 75px
+      padding: 0
       max-width: 100%
       display: flex
       justify-content: center
       align-items: center
-      background: linear-gradient(180deg, rgba(66,66,66,.9) 0%, rgba(51,51,51,1) 90%)
+      background: linear-gradient(180deg, rgba(66,66,66,.9) 0%, rgba(66,66,66,1) 90%)
       .wrapper 
-         max-width: 1440px
-         // max-height: 810px
-         position: relative
+         display: flex
+         align-items: center
+         justify-content: center
+
          .slider-block
-            overflow-x: hidden // turn on auto for mobile
-            border-radius: 5px
             box-shadow: 0 0 10px 1px rgba(0, 0, 0, .6)
-            // background-color: rgba($dark-grey, .9)
-            border-bottom: 2px $secondary-text-color solid
-            border-top: 2px $secondary-text-color solid
-            scroll-snap-type: x mandatory //scroll to next div
-            scroll-behavior: smooth //smooth scrolling
-            // to hide scrollbar
-            scrollbar-width: none
-            -ms-overflow-style: none
-            &::-webkit-scrollbar
-               display: none
-            .slide-bars
-               position: absolute
-               bottom: 20px
-               width: 600px
-               display: flex
-               left: 50%
-               transform: translateX(-25%)
-               .bar
-                  height: 5px
-                  width: 50px
-                  background-color: $main-text-color 
-                  border-radius: 5px
-                  margin: 10px 
-                  cursor: pointer
-                  transition-duration: .2s
-                  &:hover
-                     background-color: $secondary-text-color
-                     transition-duration: .2s
-                  &.active
-                     background-color: $secondary-text-color
-                  
-            .slides
-               display: flex
-               position: relative
-               width: 500%
-               .slide
-                  scroll-snap-align: start
-                  width: 20%
-                  transition: 1s ease-in-out
-                  img
-                     height: 100%
-                     width: 100%
+            height: 720px
+            width: 1280px
+            min-height: 720px
+            min-width: 1280px
+            .wrapper
+               min-width: 1280px
+               height: 100%
 
    .about-us
       padding: 100px
@@ -313,7 +368,7 @@ section
       &.bg-filter
          background-color: rgba($dark-grey,.5)
       .wrapper
-         max-width: 1370px
+         max-width: 1280px
          height: 300px
          width: 100%
          padding: 20px 
@@ -342,17 +397,100 @@ footer
 .anchor 
    display: block
    position: relative
-   top: -8vh
+   top: -7vh
    visibility: hidden
 
-   //for slider
-#r1:checked ~ .s1
-   margin-left: 0
-#r2:checked ~ .s1
-   margin-left: -20%
-#r3:checked ~ .s1
-   margin-left: -40%
-#r4:checked ~ .s1
-   margin-left: -60%
-#r5:checked ~ .s1
-   margin-left: -80%
+.sign-in-form
+   background-color: rgba($dark-grey, .7)
+   position: fixed
+   width: 100%
+   height: 100%
+   top: 0px
+   z-index: 10000
+   display: none
+   align-items: center
+   justify-content: center
+   .login-form
+      width: 500px
+      background-color: $secondary-bg-color
+      padding: 20px
+      display: none
+      p 
+         font-size: 14px
+         font-family: $main-font
+         margin: 10px
+      span
+         color: $secondary-text-color
+         cursor: pointer 
+      .form-group
+         margin: 10px 
+
+         .form-control
+            border-radius: 0
+            border: 0
+            border-bottom: 1px $secondary-text-color solid
+            background-color: $secondary-bg-color
+            color: $dark-grey
+            width: 100%
+            height: 40px
+            padding-left: 10px
+            &:focus
+               outline: none
+      input[type=submit] 
+         background-color: $secondary-text-color
+         border: none
+         color: white
+         padding: 12px 16px
+         text-decoration: none
+         cursor: pointer
+         margin: 10px 
+      .window-title
+         display: flex
+         justify-content: space-between
+         align-items: baseline
+         margin-bottom: 10px
+         .form-title
+            font-size: 18px
+            font-family: $main-font
+            margin: 10px
+         .close-tab
+            height: 30px
+            width: 30px
+            position: relative
+            cursor: pointer
+            .line1
+               border-radius: 3px
+               position: absolute
+               width: 24px
+               height: 2px
+               background-color: $dark-grey
+               top: 14px
+               left: 3px
+               transform: rotate(45deg)
+
+            .line2
+               border-radius: 3px
+               position: absolute
+               width: 24px
+               height: 2px 
+               background-color: $dark-grey
+               top: 14px
+               left: 3px
+               transform: rotate(-45deg)
+
+            &:hover
+               
+               .line1
+
+                  background-color: $secondary-text-color
+               .line2
+
+                  background-color: $secondary-text-color
+
+         
+     
+      
+         
+   .register-form
+      @extend .login-form
+      display: none
